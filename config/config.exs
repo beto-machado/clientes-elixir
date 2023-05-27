@@ -11,6 +11,10 @@ config :clientes,
   ecto_repos: [Clientes.Repo],
   generators: [binary_id: true]
 
+config :clientes, Clientes.Repo,
+  migration_primary_key: [id: :uuid, type: :binary_id],
+  migration_timestamps: [type: :utc_datetime_usec]
+
 # Configures the endpoint
 config :clientes, ClientesWeb.Endpoint,
   url: [host: "localhost"],
