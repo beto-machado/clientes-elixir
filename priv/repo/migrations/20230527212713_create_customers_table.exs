@@ -3,7 +3,7 @@ defmodule Clientes.Repo.Migrations.CreateCustomersTable do
 
   def change do
     execute "CREATE EXTENSION IF NOT EXISTS citext WITH SCHEMA public;"
-    
+
     create table(:customers) do
       add :name, :string, null: false
       add :email, :citext, null: false
